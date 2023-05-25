@@ -16,6 +16,9 @@
 		644C418F2A183A550088F47D /* paintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644C418E2A183A550088F47D /* paintTests.swift */; };
 		644C41992A183A550088F47D /* paintUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644C41982A183A550088F47D /* paintUITests.swift */; };
 		644C419B2A183A550088F47D /* paintUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644C419A2A183A550088F47D /* paintUITestsLaunchTests.swift */; };
+		64A80E292A20028600884692 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A80E282A20028600884692 /* ColorsView.swift */; };
+		64A80E2B2A20073800884692 /* AcoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A80E2A2A20073800884692 /* AcoesView.swift */; };
+		64A80E2D2A2008BB00884692 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A80E2C2A2008BB00884692 /* DrawView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		644C41942A183A550088F47D /* paintUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = paintUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		644C41982A183A550088F47D /* paintUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paintUITests.swift; sourceTree = "<group>"; };
 		644C419A2A183A550088F47D /* paintUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paintUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		64A80E282A20028600884692 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
+		64A80E2A2A20073800884692 /* AcoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcoesView.swift; sourceTree = "<group>"; };
+		64A80E2C2A2008BB00884692 /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				644C41782A183A540088F47D /* paintApp.swift */,
+				64A80E282A20028600884692 /* ColorsView.swift */,
+				64A80E2A2A20073800884692 /* AcoesView.swift */,
+				64A80E2C2A2008BB00884692 /* DrawView.swift */,
 				644C417A2A183A540088F47D /* ContentView.swift */,
 				644C417C2A183A550088F47D /* Assets.xcassets */,
 				644C41812A183A550088F47D /* Persistence.swift */,
@@ -265,7 +274,10 @@
 			files = (
 				644C41822A183A550088F47D /* Persistence.swift in Sources */,
 				644C417B2A183A540088F47D /* ContentView.swift in Sources */,
+				64A80E2D2A2008BB00884692 /* DrawView.swift in Sources */,
+				64A80E292A20028600884692 /* ColorsView.swift in Sources */,
 				644C41852A183A550088F47D /* paint.xcdatamodeld in Sources */,
+				64A80E2B2A20073800884692 /* AcoesView.swift in Sources */,
 				644C41792A183A540088F47D /* paintApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
