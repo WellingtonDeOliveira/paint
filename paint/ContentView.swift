@@ -31,21 +31,27 @@ struct ContentView: View {
     
     
     var body: some View {
-            ZStack{
-                VStack {
-                    DrawView(
-                        strokes: $strokes,
-                        widthPen: $widthPen,
-                        selectedColor: $selectedColor,
-                        currentStroke: $currentStroke,
-                        isDrawing: $isDrawing,
-                        isEraser: $isEraser,
-                        position: $position
-                    )
-                    AcoesView(strokes: $strokes, widthPen: $widthPen, isEraser: $isEraser)
-                }
-                ColorsView(selectedColor: $selectedColor).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
-                }
+        ZStack{
+            VStack {
+                DrawView(
+                    strokes: $strokes,
+                    widthPen: $widthPen,
+                    selectedColor: $selectedColor,
+                    currentStroke: $currentStroke,
+                    isDrawing: $isDrawing,
+                    isEraser: $isEraser,
+                    position: $position
+                )
+                AcoesView(strokes: $strokes, widthPen: $widthPen, isEraser: $isEraser)
+                
+            }
+            VStack{
+                ColorsView(selectedColor: $selectedColor).frame(maxWidth: .infinity).edgesIgnoringSafeArea(.all).padding(.top, 5)
+                Spacer()
+            }
+            
+            
+        }
         
     }
 
