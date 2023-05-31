@@ -13,7 +13,9 @@ struct DrawView: View {
     @Binding var selectedColor: Color
     @Binding var currentStroke: [CGPoint]
     @Binding var isDrawing: Bool
+    @Binding var isEraser: Bool
     @Binding var position: CGPoint
+    var eraser: Color = .white
     
     var body: some View {
         GeometryReader { geometry in
@@ -23,6 +25,7 @@ struct DrawView: View {
                         for (index, point) in stroke.points.enumerated() {
                             if index == 0 {
                                 path.move(to: point)
+                                print(point)
                             } else {
                                 path.addLine(to: point)
                             }
@@ -41,8 +44,8 @@ struct DrawView: View {
                         }
                     }
                 }
-                .stroke(style: StrokeStyle(lineWidth: widthPen))
-                .foregroundColor(selectedColor)
+                .stroke(style: StrokeStyle(lineWidth: isEraser ? 10*widthPen : widthPen))
+                .foregroundColor(isEraser ? eraser : selectedColor)
                     Circle()
                         .frame(height: 3*widthPen)
                         .foregroundColor(selectedColor)
@@ -64,7 +67,7 @@ struct DrawView: View {
                     }
                     .onEnded { value in
                         isDrawing = false
-                        let stroke = Stroke(points: currentStroke, color: selectedColor, wdPen: widthPen)
+                        let stroke = Stroke(points: currentStroke, color: isEraser ? eraser : selectedColor, wdPen: isEraser ? 10*widthPen : widthPen)
                         strokes.append(stroke)
                         currentStroke = []
                     }
@@ -81,6 +84,7 @@ struct DrawView_Previews: PreviewProvider {
             selectedColor: .constant(.black),
             currentStroke: .constant([]),
             isDrawing: .constant(false),
+            isEraser: .constant(false),
             position: .constant(.zero)
         )
     }

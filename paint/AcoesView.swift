@@ -10,10 +10,25 @@ import SwiftUI
 struct AcoesView: View {
     @Binding var strokes: [Stroke]
     @Binding var widthPen: CGFloat
+    @Binding var isEraser: Bool
+    
+    func prinT(){
+        print(isEraser)
+    }
     
     var body: some View {
         HStack{
-            Circle().frame(height: 50).overlay(Image(systemName: "eraser.fill").font(.system(size: 20)).foregroundColor(.white)).onTapGesture {
+            Circle()
+                .frame(height: 50)
+                .overlay(Image(systemName: "eraser.fill")
+                .font(.system(size: 20))
+                .foregroundColor(.white))
+                .onTapGesture {
+                    isEraser = !isEraser
+            }
+            Circle().frame(height: 50).overlay(Image(systemName: "xmark")
+                .font(.system(size: 20)).foregroundColor(.white))
+                .onTapGesture {
                 strokes = []
             }
             Circle()
@@ -42,6 +57,6 @@ struct AcoesView: View {
 
 struct AcoesView_Previews: PreviewProvider {
     static var previews: some View {
-        AcoesView(strokes: .constant([]), widthPen: .constant(0))
+        AcoesView(strokes: .constant([]), widthPen: .constant(0), isEraser: .constant(false))
     }
 }

@@ -21,6 +21,7 @@ struct ContentView: View {
     @State private var strokes: [Stroke] = []
     @State private var currentStroke: [CGPoint] = []
     @State private var isDrawing: Bool = false
+    @State private var isEraser: Bool = false
     @State private var selectedColor: Color = .black
     @State private var widthPen: CGFloat = 2
     @State private var position: CGPoint = .zero
@@ -30,19 +31,23 @@ struct ContentView: View {
     
     
     var body: some View {
-            VStack {
-                ColorsView(selectedColor: $selectedColor)
-                DrawView(
-                    strokes: $strokes,
-                    widthPen: $widthPen,
-                    selectedColor: $selectedColor,
-                    currentStroke: $currentStroke,
-                    isDrawing: $isDrawing,
-                    position: $position
-                )
-                AcoesView(strokes: $strokes, widthPen: $widthPen)
-            }
-        }
+            ZStack{
+                VStack {
+                    DrawView(
+                        strokes: $strokes,
+                        widthPen: $widthPen,
+                        selectedColor: $selectedColor,
+                        currentStroke: $currentStroke,
+                        isDrawing: $isDrawing,
+                        isEraser: $isEraser,
+                        position: $position
+                    )
+                    AcoesView(strokes: $strokes, widthPen: $widthPen, isEraser: $isEraser)
+                }
+                ColorsView(selectedColor: $selectedColor).frame(maxWidth: .infinity, maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+                }
+        
+    }
 
 }
 
